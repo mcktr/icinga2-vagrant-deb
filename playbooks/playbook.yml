@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - standard
+    - icinga2-master
