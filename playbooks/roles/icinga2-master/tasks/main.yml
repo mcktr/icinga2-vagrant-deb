@@ -133,44 +133,44 @@
     state: present
   become: true
 
-- name: apt present php5-fpm
+- name: apt present php-fpm
   apt:
-    name: php5-fpm
+    name: php-fpm
     state: present
     update_cache: yes
   become: true
 
-- name: apt present php5-mysql
+- name: apt present php-mysql
   apt: 
-    name: php5-mysql
+    name: php-mysql
     state: present
     update_cache: yes
   become: true
 
-- name: apt present php5-gd
+- name: apt present php-gd
   apt:
-    name: php5-gd
+    name: php-gd
     state: present
     update_cache: yes
   become: true
 
-- name: apt present php5-intl
+- name: apt present php-intl
   apt:
-    name: php5-intl
+    name: php-intl
     state: present
     update_cache: yes
   become: true
 
-- name: apt present php5-curl
+- name: apt present php-curl
   apt:
-    name: php5-curl
+    name: php-curl
     state: present
     update_cache: yes
   become: true
 
-- name: apt present php5-imagick
+- name: apt present pph-imagick
   apt:
-    name: php5-imagick
+    name: php-imagick
     state: present
     update_cache: yes
   become: true
@@ -337,5 +337,5 @@
 - name: systemd restarted php5-fpm
   systemd:
     state: restarted
-    name: php5-fpm
+    name: php7.0-fpm
   become: true
