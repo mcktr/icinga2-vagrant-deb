@@ -108,15 +108,21 @@
   command: /usr/sbin/icinga2 feature enable ido-mysql
   become: true
 
+- name: command icinga2 api setup
+  command: /usr/sbin/icinga2 api setup
+  become: true
+
+- name: template icinga2/api-users.conf
+  template: 
+    src: icinga2/api-users.conf.j2
+    dest: /etc/icinga2/conf.d/api-users.conf
+  become: true
+
 - name: apt present nginx
   apt:
     update-cache: yes
     name: nginx
     state: present
-  become: true
-
-- name: command icinga2 feature enable command
-  command: /usr/sbin/icinga2 feature enable command
   become: true
 
 - name: user present www-data
