@@ -1,8 +1,0 @@
-mariadb_root_user: root
-mariadb_root_password: sqlroot
-mariadb_icinga_db: icinga2
-mariadb_icinga_user: icinga2
-mariadb_icinga_password: sqlicinga2
-mariadb_icingaweb2_db: icingaweb2
-mariadb_icingaweb2_user: icingaweb2
-mariadb_icingaweb2_password: sqlicingaweb2
