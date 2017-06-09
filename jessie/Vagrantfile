@@ -8,9 +8,8 @@ cpus = '2'
 Vagrant.configure(2) do |config|
   config.vm.box = box
   config.vm.hostname = hostname
-  config.vm.network :private_network, ip: hostonly
-#  config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
-  config.vm.network :forwarded_port, guest: 22, host: 2082
+  config.vm.network :private_network, ip: hostonly, 
+    nic_type: "82540EM"
 
   config.vm.synced_folder "../playbooks/", "/vagrant"
 
