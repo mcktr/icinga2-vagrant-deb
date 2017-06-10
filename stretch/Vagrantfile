@@ -1,0 +1,41 @@
+hostname = 'stretch-icinga2'
+box = 'debian/stretch64'
+net = 'demo.local'
+memory = '2048'
+cpus = '2'
+
+Vagrant.configure(2) do |config|
+  config.vm.box = box
+  config.vm.hostname = hostname
+
+  config.vm.network "private_network", ip: "172.16.33.5",
+    nic_type: "82540EM"
+
+  config.vm.boot_timeout = 60
+
+  config.vm.synced_folder "../playbooks/", "/vagrant"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.name = hostname
+    vb.customize ["modifyvm", :id,
+      "--groups", "/Icinga 2 Vagrant/" + net,
+      "--memory", "512",
+      "--cpus", "1",
+      "--audio", "none",
+      "--usb", "on",
+      "--usbehci", "off",
+      "--natdnshostresolver1", "on"
+    ]
+    vb.cpus = cpus
+    vb.memory = memory
+  end
+
+  config.vm.provision "shell", path: "../scripts/shell_provisoner.sh"
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "./playbook.yml"
+    ansible.install_mode = "pip"
+    ansible.version = "2.3.1.0"
+  end
+end
