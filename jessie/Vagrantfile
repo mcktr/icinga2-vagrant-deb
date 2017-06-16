@@ -8,10 +8,8 @@ cpus = '2'
 Vagrant.configure(2) do |config|
   config.vm.box = box
   config.vm.hostname = hostname
-  config.vm.network :private_network, ip: hostonly, 
+  config.vm.network :private_network, ip: hostonly,
     nic_type: "82540EM"
-
-  config.vm.synced_folder "../playbooks/", "/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = hostname
@@ -29,10 +27,4 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", path: "../scripts/shell_provisoner.sh"
-
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "./playbook.yml"
-    ansible.install_mode = "pip"
-    ansible.version = "2.3.1.0"
-  end
 end
