@@ -1,7 +1,0 @@
-- hosts: all
-  roles:
-    - standard
-    - icinga2
-    - monitoring-plugins
-    - icinga2-ido-mysql
-    - icingaweb2
