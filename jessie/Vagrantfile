@@ -1,7 +1,7 @@
-hostname = 'srv-icinga2'
+hostname = 'jessie-icinga2a'
 box = 'debian/jessie64'
 net = 'demo.local'
-hostonly = '192.168.16.5'
+hostonly = '172.16.33.5'
 memory = '2048'
 cpus = '2'
 
@@ -12,6 +12,7 @@ Vagrant.configure(2) do |config|
     nic_type: "82540EM"
 
   config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
     vb.name = hostname
     vb.customize ["modifyvm", :id,
       "--groups", "/Icinga 2 Vagrant/" + net,
