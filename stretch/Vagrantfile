@@ -1,14 +1,14 @@
-hostname = 'stretch-icinga2'
+hostname = 'stretch-icinga2a'
 box = 'debian/stretch64'
 net = 'demo.local'
+hostonly = '172.16.33.5'
 memory = '2048'
 cpus = '2'
 
 Vagrant.configure(2) do |config|
   config.vm.box = box
   config.vm.hostname = hostname
-
-  config.vm.network "private_network", ip: "172.16.33.5",
+  config.vm.network :private_network, ip: hostonly,
     nic_type: "82540EM"
 
   config.vm.provider "virtualbox" do |vb|
