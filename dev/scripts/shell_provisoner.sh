@@ -15,5 +15,5 @@ sudo pip -q install ansible
 echo "Finished installing Ansible"
 sudo mkdir /vagrant/ansible
 echo "Running provisioning"
-ansible-pull -U https://github.com/mcktr/ansible-icinga2.git -d /vagrant/ansible -C dev/development
+ansible-pull -U https://github.com/mcktr/ansible-icinga2.git -d /vagrant/ansible -C deb/development
 echo "Finished provisioning"
