@@ -42,7 +42,7 @@
 
 - name: set timezone in php.ini
   lineinfile:
-    path: /etc/php/7.0/fpm/php.ini
+    dest: /etc/php/7.0/fpm/php.ini
     regexp: ';date\.timezone ='
     line: 'date.timezone = Europe/Berlin'
   become: true
