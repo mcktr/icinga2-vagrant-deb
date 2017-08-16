@@ -6,7 +6,7 @@
     - nano
     - bashrc
     - htop
-    - icinga2-stable
+    - icinga2-snapshot
     - icinga2
     - monitoring-plugins
     - icinga2-ido-mysql
