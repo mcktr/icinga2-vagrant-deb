@@ -4,6 +4,7 @@
   roles:
     - apt
     - nano
+    - vim
     - bashrc
     - htop
     - icinga2-stable
