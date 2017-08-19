@@ -1,0 +1,18 @@
+dependencies: 
+  - { role: bison }
+  - { role: build-essential }
+  - { role: cmake }
+  - { role: debhelper }
+  - { role: default-libmysqlclient-dev }
+  - { role: dh-systemd }
+  - { role: flex }
+  - { role: git }
+  - { role: libboost-all-dev }
+  - { role: libedit-dev }
+  - { role: libpq-dev }
+  - { role: libssl-dev }
+  - { role: libwxgtk3.0-dev }
+  - { role: libyajl-dev }
+  - { role: make }
+  - { role: pkg-config }
+  - { role: po-debconf }
