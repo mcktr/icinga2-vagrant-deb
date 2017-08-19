@@ -1,9 +1,9 @@
-hostname = 'stretch-icinga2-dev'
+hostname = 'deb-icinga2a'
 box = 'debian/stretch64'
 net = 'demo.local'
-hostonly = '172.16.33.5'
-memory = '4096'
-cpus = '4'
+hostonly = '172.16.33.15'
+memory = '2048'
+cpus = '2'
 
 Vagrant.configure(2) do |config|
   config.vm.box = box
@@ -27,9 +27,9 @@ Vagrant.configure(2) do |config|
     vb.memory = memory
   end
 
-  config.vm.provision "shell", path: "../../scripts/shell_provisoner.sh"
+  config.vm.provision "shell", path: "../scripts/shell_provisoner.sh"
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "../../ansible/development.yml"
+    ansible.playbook = "../ansible/icinga2-stable.yml"
   end
 end
